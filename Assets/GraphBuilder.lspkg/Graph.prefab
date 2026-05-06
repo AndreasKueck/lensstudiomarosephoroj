@@ -1,0 +1,133 @@
+- !<ObjectPrefab/8326e817-35b3-44e3-aa98-a985009317b0>
+  PackagePath: ""
+  objects:
+    - !<own> 49c6b85a-5570-4962-98aa-0a477ebdc4a9
+  LazyLoading: false
+  RetainAssets: true
+  PreviewEnvironment: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/2bcceaf7-e7e0-4e84-8664-f9c639cfa5c9>
+  PrefabRemaps:
+    []
+  Name: Background
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> aa174a49-d0de-41cf-a9b0-f2b87efcd96a
+- !<RenderMeshVisual/37431495-d3ed-4b00-a018-3803e6a71129>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 05266268-9b2b-4d55-9f3b-e06225177012
+  Mesh: !<reference> 00000000-0000-0000-0000-000000000000
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/49c6b85a-5570-4962-98aa-0a477ebdc4a9>
+  PrefabRemaps:
+    - 2bcceaf7-e7e0-4e84-8664-f9c639cfa5c9: 2bcceaf7-e7e0-4e84-799b-0639c6305a36
+    - 37431495-d3ed-4b00-a018-3803e6a71129: 37431495-d3ed-4b00-5fe7-c7fc1958eed6
+    - 49c6b85a-5570-4962-98aa-0a477ebdc4a9: 49c6b85a-5570-4962-6755-f5b881423b56
+    - a580f83e-ce37-44f4-8dfc-2ff75aa4898a: a580f83e-ce37-44f4-7203-d008a55b7675
+    - aa174a49-d0de-41cf-a9b0-f2b87efcd96a: aa174a49-d0de-41cf-564f-0d4781032695
+    - b3d3ad00-34e2-4b32-91eb-0d55c15007fd: b3d3ad00-34e2-4b32-6e14-f2aa3eaff802
+  Name: Graph
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: -0.329231, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 40.000000, y: 20.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 2bcceaf7-e7e0-4e84-8664-f9c639cfa5c9
+    - !<own> b3d3ad00-34e2-4b32-91eb-0d55c15007fd
+  Components:
+    - !<own> a580f83e-ce37-44f4-8dfc-2ff75aa4898a
+- !<ScriptComponent/a580f83e-ce37-44f4-8dfc-2ff75aa4898a>
+  PrefabRemaps:
+    []
+  Name: GraphBuilder
+  Enabled: true
+  ScriptAsset: !<reference> 224a9dcc-96d8-41a8-9817-e3f49e4019ab
+  ScriptInputsDefault:
+    sampling: true
+    refreshMethod: true
+    upperBound: true
+    lowerBound: true
+    clampCurveInsideGraph: true
+    smoothingEnabled: true
+    smoothingSharpness: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      curveMeshVisual: !<reference.RenderMeshVisual> 37431495-d3ed-4b00-a018-3803e6a71129
+      sampling: 200
+      refreshMethod: 0
+      refreshTime: 0.500000
+      upperBound: !<float> 1.000000
+      lowerBound: !<float> 0.000000
+      colors: !<Vec3[]>
+        - {x: 0.956863, y: 0.286275, z: 0.278431}
+        - {x: 0.996078, y: 1.000000, z: 0.172549}
+        - {x: 0.266667, y: 1.000000, z: 0.745098}
+      graphMode: 1
+      curveWidth: 0.040000
+      clampCurveInsideGraph: true
+      smoothingEnabled: false
+      smoothingSharpness: 0.500000
+  ScriptTypes:
+    "":
+      {}
+- !<Image/aa174a49-d0de-41cf-a9b0-f2b87efcd96a>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ac8f4794-fffe-4f0e-abae-d576b1b5951b
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/b3d3ad00-34e2-4b32-91eb-0d55c15007fd>
+  PrefabRemaps:
+    []
+  Name: Curve
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.500000, y: -0.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 37431495-d3ed-4b00-a018-3803e6a71129

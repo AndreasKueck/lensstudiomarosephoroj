@@ -1,0 +1,39 @@
+- !<NativePackageDescriptor/719ab16d-7c9d-4f62-a9e4-58a90ca22069>
+  PackagePath: ""
+  StudioVersion:
+    major: 5
+    minor: 20
+    patch: 0
+    build: 26040820
+    type: Unset
+    buildFlavor: ""
+    timestamp: 0
+    commit: ""
+  Description: ""
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  VersionMajor: 0
+  VersionMinor: 1
+  VersionPatch: 0
+  UpdateCheckpoint: 96
+  ExportUid: 47b1d602-07f2-438b-bdb9-cb4607cdafa5
+  ComponentUid: 30b14524-0153-4a2d-9f01-e0cef71bec14
+  PackagePolicy: CanBeUnpackedTransparent
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
+  AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
+    Name: GraphBuilder
+    AssetId: 6SnLqf4H8XtL2IHyjOa8c7
+    Hash: 36873f5166bc96e3f0157fc837a8ec52
+    Version:
+      major: -1
+      minor: -1
+      patch: -1
+      build: 0
+  coreVersion: 356
+  clientVersion: 13.8599997

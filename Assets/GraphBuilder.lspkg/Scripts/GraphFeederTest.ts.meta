@@ -1,0 +1,50 @@
+- !<AssetImportMetadata/a637a4ac-ec48-f340-c1ac-249672d240fe>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 90b76501-fb70-46bf-8797-22d63e642329
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 90b76501-fb70-46bf-8797-22d63e642329
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> e0cc372b-b0fa-48a9-aee8-b77966e62d96
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/e0cc372b-b0fa-48a9-aee8-b77966e62d96>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 410ad11a-d27d-410f-88f7-fc42816478a5
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    eligoTeksto: false
+    graphBuilder: false
+    mode: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - graphBuilder: !<MappingBased.AssignableType_1> 00000000-0000-0000-0000-000000000000
+      mode: !<float> 0.000000
+      eligoTeksto: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input AssignableType_1 graphBuilder
+    - '// @input float mode {"widget":"combobox", "values":[{"label":"Framerate", "value":0}, {"label":"Regular random data ", "value":1}, {"label":"Cosinus", "value":2}]}'
+    - // @input Component.Text eligoTeksto

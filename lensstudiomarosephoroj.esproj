@@ -1,0 +1,53 @@
+studioVersion:
+  major: 5
+  minor: 20
+  patch: 0
+  build: 26040820
+  type: Public
+coreVersion: 356
+clientVersion: 13.86
+updateCheckpoint: 96
+sceneId: 0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99
+metaInfo:
+  hints:
+    []
+  tags:
+    []
+  lensName: "Maro: sep horoj"
+  lensDescriptors:
+    - GEN_AI_ICON
+  lensApplicableContext:
+    - live_camera
+    - reply_camera
+    - video_chat
+  lensApplicability:
+    - Front
+    - Back
+  lensClientCompatibilities:
+    - Mobile
+    - Web
+  platformBundlesEnabled: false
+  iconHash: 50484f79421c0ef75c1cd811462aa9ee
+  videoPreviewHash: ""
+  fromTemplateName: Default
+  fromTemplateUrl: Lens Studio 5.12.1.25080420
+  activationCamera: Rear
+  sourceMapEnabled: false
+  shaderCacheInvalidationEnabled: false
+  usingMinClientVersions: false
+  androidMinClientVersion:
+    major: 0
+    minor: 0
+    patch: 0
+    build: 0
+  iOSMinClientVersion:
+    major: 0
+    minor: 0
+    patch: 0
+    build: 0
+  documentId: 069f52b1-1585-4b8d-8238-40036a85aab4
+  originalDocumentId: d535af76-857e-4ff7-8cf4-1d6da341a614
+  packageId: ""
+  packageVersion: ""
+  spkPrivilegeLevel: Generic
+  gluboEnabled: false
