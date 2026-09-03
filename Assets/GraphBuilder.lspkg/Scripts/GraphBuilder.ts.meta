@@ -1,0 +1,86 @@
+- !<AssetImportMetadata/d4a15c92-d6da-742b-3ece-b087b0d1d1cf>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 224a9dcc-96d8-41a8-9817-e3f49e4019ab
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 224a9dcc-96d8-41a8-9817-e3f49e4019ab
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> ccc58c84-d3fb-42d3-88c0-57efb306e3ca
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/ccc58c84-d3fb-42d3-88c0-57efb306e3ca>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  VersionPrerelease: ""
+  UpdateOrder: 0
+  ComponentUid: bf344ce6-40cb-4e9a-aa70-208a707e027f
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    clampCurveInsideGraph: false
+    colors: false
+    curveMeshVisual: false
+    curveWidth: false
+    graphMode: false
+    lowerBound: false
+    refreshMethod: false
+    refreshTime: false
+    sampling: false
+    smoothingEnabled: false
+    smoothingSharpness: false
+    upperBound: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - curveMeshVisual: !<reference.RenderMeshVisual> 00000000-0000-0000-0000-000000000000
+      sampling: 200
+      refreshMethod: 0
+      refreshTime: 0.250000
+      upperBound: !<float> 1.000000
+      lowerBound: !<float> 0.000000
+      colors: !<Vec3[]>
+        []
+      graphMode: 0
+      curveWidth: 0.020000
+      clampCurveInsideGraph: true
+      smoothingEnabled: false
+      smoothingSharpness: 0.500000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<b>Base Properties</b>"}'
+    - // @input Component.RenderMeshVisual curveMeshVisual
+    - '// @input int sampling = "200" {"hint":"The number of values to be displayed in the graph", "widget":"slider", "min":0, "max":500, "step":1}'
+    - '// @input int refreshMethod = "0" {"widget":"combobox", "values":[{"label":"Update Event", "value":0}, {"label":"Delayed Event", "value":1}, {"label":"Manual", "value":2}]}'
+    - '// @input float refreshTime = 0.25 {"hint":"The time in seconds between each refresh", "showIf":"refreshMethod", "showIfValue":1}'
+    - '// @input float upperBound = "1"'
+    - '// @input float lowerBound = "0"'
+    - '// @ui {"widget":"separator"}'
+    - '// @ui {"widget":"label", "label":"<b>Visual Properties</b>"}'
+    - '// @input vec3[] colors = {} {"label":"Colors (low to high)", "widget":"color"}'
+    - '// @input int graphMode {"widget":"combobox", "values":[{"label":"Curve", "value":0}, {"label":"Area", "value":1}]}'
+    - '// @input float curveWidth = 0.02 {"showIf":"graphMode", "showIfValue":0}'
+    - // @input bool clampCurveInsideGraph = true
+    - '// @ui {"widget":"group_start", "label":"Smoothing"}'
+    - "// @input bool smoothingEnabled {\"label\":\"Enabled\", \"hint\":\"Enables smooth transition between values.\\nSmoothing is not available with the 'Manual' refresh method for now.\"}"
+    - '// @input float smoothingSharpness = "0.5" {"label":"Sharpness", "widget":"slider", "min":0.01, "max":0.99, "step":0.01, "showIf":"smooth"}'
+    - '// @ui {"widget":"group_end"}'

@@ -1,0 +1,54 @@
+studioVersion:
+  major: 5
+  minor: 23
+  patch: 2
+  build: 26081320
+  type: Public
+coreVersion: 372
+clientVersion: 14.16
+updateCheckpoint: 102
+sceneId: 0a1ccb1a-fe88-4fbb-9883-e3af3c75fd99
+metaInfo:
+  hints:
+    []
+  tags:
+    []
+  lensName: "Maro: sep horoj"
+  lensDescriptors:
+    []
+  lensApplicableContext:
+    - live_camera
+    - reply_camera
+    - video_chat
+  lensApplicability:
+    - Front
+    - Back
+  lensClientCompatibilities:
+    - Mobile
+    - CameraKit
+  platformBundlesEnabled: false
+  iconHash: 674128bdd0266d2d7260fcc3a6154c4b
+  videoPreviewHash: ""
+  fromTemplateName: Default
+  fromTemplateUrl: Lens Studio 5.12.1.25080420
+  activationCamera: Rear
+  sourceMapEnabled: false
+  shaderCacheInvalidationEnabled: false
+  usingMinClientVersions: false
+  androidMinClientVersion:
+    major: 0
+    minor: 0
+    patch: 0
+    build: 0
+  iOSMinClientVersion:
+    major: 0
+    minor: 0
+    patch: 0
+    build: 0
+  documentId: 803f9821-1efc-4375-b0cb-7a9b1f6218d3
+  originalDocumentId: d535af76-857e-4ff7-8cf4-1d6da341a614
+  packageId: ""
+  packageVersion: ""
+  spkPrivilegeLevel: Generic
+  gluboEnabled: false
+targetPlatform: Snapchat
