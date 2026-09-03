@@ -2,9 +2,15 @@
   PackagePath: ""
   StudioVersion:
     major: 5
+<<<<<<< HEAD
     minor: 23
     patch: 2
     build: 26081320
+=======
+    minor: 20
+    patch: 0
+    build: 26040820
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
     type: Unset
     buildFlavor: ""
     timestamp: 0
@@ -16,7 +22,11 @@
   VersionMajor: 0
   VersionMinor: 1
   VersionPatch: 0
+<<<<<<< HEAD
   UpdateCheckpoint: 102
+=======
+  UpdateCheckpoint: 96
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
   ExportUid: 47b1d602-07f2-438b-bdb9-cb4607cdafa5
   ComponentUid: 30b14524-0153-4a2d-9f01-e0cef71bec14
   PackagePolicy: CanBeUnpackedTransparent
@@ -35,5 +45,10 @@
       minor: -1
       patch: -1
       build: 0
+<<<<<<< HEAD
   coreVersion: 372
   clientVersion: 14.1599998
+=======
+  coreVersion: 356
+  clientVersion: 13.8599997
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2

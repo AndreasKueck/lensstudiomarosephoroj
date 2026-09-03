@@ -1,11 +1,26 @@
 // @input Component.Text textComponent
 // @input Component.Text eligoTeksto
 // @input Component.Text eligoTeksto1
+<<<<<<< HEAD
+=======
+// @input Asset.CloudStorageModule cloudStorageModule
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 
 var datumojCache = null;
 var datumojCacheSource = null;
 var aktualaDatumojTeksto = null;
 
+<<<<<<< HEAD
+=======
+script.store = null;
+var cloudStoreReady = false;
+var cloudStoreInitStarted = false;
+var pendingSaveValue = null;
+var pendingLoadCallbacks = [];
+
+var CLOUD_KEY = "tideInputNiveloj";
+
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 var DEFAULT_PLACE = "Cuxhaven";
 
 var DEFAULT_DATUMOJ = `M2 132.741909 -18.798868 2 0 0 0 0 0 0
@@ -84,6 +99,7 @@ function makeDefaultFullInput() {
 var initialLoadStarted = false;
 var initialLoadDone = false;
 
+<<<<<<< HEAD
 // ---------------- INPUT / PARSING ----------------
 
 function normalizeInputText(s) {
@@ -142,6 +158,140 @@ function isConstituentName(s) {
     return /^[A-Za-z0-9_]+$/.test(s) && /[A-Za-z]/.test(s);
 }
 
+=======
+// ---------------- CLOUD STORAGE ----------------
+
+function onCloudStorageError(code, message) {
+    print("CloudStorage-Fehler: " + code + " " + message);
+}
+
+function flushPendingLoadCallbacks(value) {
+    var callbacks = pendingLoadCallbacks.slice();
+    pendingLoadCallbacks = [];
+
+    for (var i = 0; i < callbacks.length; i++) {
+        try {
+            callbacks[i](value);
+        } catch (e) {
+            print("Fehler in Load-Callback: " + e);
+        }
+    }
+}
+
+function onCloudStoreInitError(code, message) {
+    print("CloudStore-Initialisierung fehlgeschlagen: " + code + " " + message);
+
+    cloudStoreReady = false;
+    cloudStoreInitStarted = false;
+
+    flushPendingLoadCallbacks(null);
+}
+
+function onCloudStoreReady(store) {
+    print("CloudStore created");
+
+    script.store = store;
+    cloudStoreReady = true;
+    cloudStoreInitStarted = false;
+
+    if (pendingSaveValue !== null) {
+        var valueToSave = pendingSaveValue;
+        pendingSaveValue = null;
+        saveInputToCloud(valueToSave);
+    }
+
+    if (pendingLoadCallbacks.length > 0) {
+        fetchCloudValue(function(value) {
+            flushPendingLoadCallbacks(value);
+        });
+    }
+}
+
+function createCloudStore() {
+    if (cloudStoreReady || cloudStoreInitStarted) {
+        return;
+    }
+
+    if (!script.cloudStorageModule) {
+        print("Kein CloudStorageModule als Script-Input gesetzt.");
+        flushPendingLoadCallbacks(null);
+        return;
+    }
+
+    cloudStoreInitStarted = true;
+
+    var cloudStorageOptions = CloudStorageOptions.create();
+
+    script.cloudStorageModule.getCloudStore(
+        cloudStorageOptions,
+        onCloudStoreReady,
+        onCloudStoreInitError
+    );
+}
+
+function fetchCloudValue(callback) {
+    if (!script.store) {
+        callback(null);
+        return;
+    }
+
+    var readOptions = CloudStorageReadOptions.create();
+    readOptions.scope = StorageScope.User;
+
+    script.store.getValue(
+        CLOUD_KEY,
+        readOptions,
+        function onSuccess(key, value) {
+            callback(value || null);
+        },
+        function onNotFound() {
+            callback(null);
+        }
+    );
+}
+
+function saveInputToCloud(value) {
+    if (!value || value.trim().length === 0) {
+        return;
+    }
+
+    if (!cloudStoreReady || !script.store) {
+        pendingSaveValue = value;
+        createCloudStore();
+        return;
+    }
+
+    var writeOptions = CloudStorageWriteOptions.create();
+    writeOptions.scope = StorageScope.User;
+
+    script.store.setValue(
+        CLOUD_KEY,
+        value,
+        writeOptions,
+        function onSuccess() {
+            print("Eingabe im Cloud Storage gespeichert.");
+        },
+        onCloudStorageError
+    );
+}
+
+function loadInputFromCloud(callback) {
+    if (!callback) {
+        return;
+    }
+
+    if (!cloudStoreReady || !script.store) {
+        pendingLoadCallbacks.push(callback);
+        createCloudStore();
+        return;
+    }
+
+    fetchCloudValue(callback);
+}
+
+// ---------------- INPUT / PARSING ----------------
+
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 function parseDateTime(datoTempo) {
     if (!/^\d{12}$/.test(datoTempo)) {
         return null;
@@ -182,12 +332,17 @@ function parseDateTime(datoTempo) {
 }
 
 function parseEnigo(rawText) {
+<<<<<<< HEAD
     var text = normalizeInputText(rawText).trim();
+=======
+    var text = rawText ? rawText.trim() : "";
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 
     if (text.length === 0) {
         return null;
     }
 
+<<<<<<< HEAD
     // Alles über Tokens parsen, damit Zeilenumbrüche egal sind.
     var tokens = text.split(/\s+/);
 
@@ -231,6 +386,37 @@ function parseEnigo(rawText) {
     }
 
     return null;
+=======
+    // Format:
+    // harmonische Konstituenten mit Doodson-Zahlen
+    // YYYYMMDDHHMM Ortsname
+    var match = text.match(/([\s\S]*?)\b(\d{12})\b(?:\s+([\s\S]+))?$/);
+
+    if (!match) {
+        return null;
+    }
+
+    var datumojTeksto = match[1].trim();
+    var datoTempo = match[2];
+    var loknomo = match[3] ? match[3].replace(/\s+/g, " ").trim() : DEFAULT_PLACE;
+
+    if (parseDatumoj(datumojTeksto).length === 0) {
+        return null;
+    }
+
+    var startDate = parseDateTime(datoTempo);
+
+    if (!startDate) {
+        return null;
+    }
+
+    return {
+        datumojTeksto: datumojTeksto,
+        datoTempo: datoTempo,
+        loknomo: loknomo,
+        startDate: startDate
+    };
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 }
 
 // ---------------- INITIAL LOAD ----------------
@@ -255,7 +441,11 @@ function buildEffectiveInput(storedInput) {
     };
 }
 
+<<<<<<< HEAD
 function initializeInputFromDefault() {
+=======
+function initializeInputFromCloudOrDefault() {
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
     if (initialLoadStarted || initialLoadDone) {
         return;
     }
@@ -272,12 +462,33 @@ function initializeInputFromDefault() {
         }
     }
 
+<<<<<<< HEAD
     initialLoadDone = true;
     initialLoadStarted = false;
 
     if (defaultPrepared.parsed) {
         main(defaultPrepared.parsed);
     }
+=======
+    if (defaultPrepared.parsed) {
+        main(defaultPrepared.parsed);
+    }
+
+    loadInputFromCloud(function(storedInput) {
+        var prepared = buildEffectiveInput(storedInput);
+
+        if (script.textComponent) {
+            script.textComponent.text = prepared.text;
+        }
+
+        initialLoadDone = true;
+        initialLoadStarted = false;
+
+        if (prepared.parsed) {
+            main(prepared.parsed);
+        }
+    });
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 }
 
 // ---------------- TOUCH / UPDATE ----------------
@@ -291,6 +502,7 @@ function onUpdateEvent(eventData) {
         var parsedCurrent = parseEnigo(currentInput);
 
         if (parsedCurrent) {
+<<<<<<< HEAD
             main(parsedCurrent);
         } else {
             var prepared = buildEffectiveInput(null);
@@ -302,11 +514,28 @@ function onUpdateEvent(eventData) {
             if (prepared.parsed) {
                 main(prepared.parsed);
             }
+=======
+            saveInputToCloud(currentInput);
+            main(parsedCurrent);
+        } else {
+            loadInputFromCloud(function(storedInput) {
+                var prepared = buildEffectiveInput(storedInput);
+
+                if (script.textComponent) {
+                    script.textComponent.text = prepared.text;
+                }
+
+                if (prepared.parsed) {
+                    main(prepared.parsed);
+                }
+            });
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
         }
 
         return;
     }
 
+<<<<<<< HEAD
     var preparedDefault = buildEffectiveInput(null);
 
     if (script.textComponent) {
@@ -316,6 +545,19 @@ function onUpdateEvent(eventData) {
     if (preparedDefault.parsed) {
         main(preparedDefault.parsed);
     }
+=======
+    loadInputFromCloud(function(storedInput) {
+        var prepared = buildEffectiveInput(storedInput);
+
+        if (script.textComponent) {
+            script.textComponent.text = prepared.text;
+        }
+
+        if (prepared.parsed) {
+            main(prepared.parsed);
+        }
+    });
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 }
 
 // ---------------- MAIN ----------------
@@ -467,7 +709,11 @@ function main(parsedInput) {
     if (script.eligoTeksto) {
         script.eligoTeksto.text =
             rezchioma1 + "\n" +
+<<<<<<< HEAD
             ". t0  unu  du   tri  kvar kvin ses\n" +
+=======
+            ". t0 unu du tri kvar kvin ses\n" +
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
             "horojn post t0\n" +
             "Akvoniveloj en metroj en " + loknomo + ";\n" +
             "privata neoficiala prognozo.\n" +
@@ -485,6 +731,7 @@ function main(parsedInput) {
 function parseDatumoj(dataString) {
     var components = [];
 
+<<<<<<< HEAD
     var text = normalizeInputText(dataString).trim();
 
     if (text.length === 0) {
@@ -547,6 +794,56 @@ function parseDatumoj(dataString) {
 
         // Eine vollständige Konstituente verbraucht genau 10 Tokens.
         i += 10;
+=======
+    if (!dataString || dataString.trim().length === 0) {
+        return components;
+    }
+
+    var lines = dataString.trim().split("\n");
+
+    for (var i = 0; i < lines.length; i++) {
+        var line = lines[i].trim();
+
+        if (line.length === 0) {
+            continue;
+        }
+
+        var parts = line.split(/\s+/);
+
+        // Name + Amplitude + Phase + 7 Doodson-Zahlen = mindestens 10 Felder
+        if (parts.length < 10) {
+            continue;
+        }
+
+        var component = {
+            nomo: parts[0],
+            a: parseFloat(parts[1]),
+            u: parseFloat(parts[2]) * Math.PI / 180,
+            kh0s: parseFloat(parts[3]),
+            ks: parseFloat(parts[4]),
+            kh0: parseFloat(parts[5]),
+            kpp: parseFloat(parts[6]),
+            kns: parseFloat(parts[7]),
+            kq: parseFloat(parts[8]),
+            kn90: parseFloat(parts[9])
+        };
+
+        if (
+            isNaN(component.a) ||
+            isNaN(component.u) ||
+            isNaN(component.kh0s) ||
+            isNaN(component.ks) ||
+            isNaN(component.kh0) ||
+            isNaN(component.kpp) ||
+            isNaN(component.kns) ||
+            isNaN(component.kq) ||
+            isNaN(component.kn90)
+        ) {
+            continue;
+        }
+
+        components.push(component);
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
     }
 
     return components;
@@ -671,7 +968,12 @@ function niv(zt1, tago, monato, jaro) {
 
 // ---------------- START ----------------
 
+<<<<<<< HEAD
 initializeInputFromDefault();
+=======
+createCloudStore();
+initializeInputFromCloudOrDefault();
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
 
 script.createEvent("TouchStartEvent").bind(function(eventData) {
     onUpdateEvent(eventData);

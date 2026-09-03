@@ -22,12 +22,19 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
+<<<<<<< HEAD
   VersionPrerelease: ""
   UpdateOrder: 0
+=======
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
   ComponentUid: 628a16d5-95c5-4e9d-b8bd-6a5a8b97849c
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+<<<<<<< HEAD
+=======
+    cloudStorageModule: false
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
     eligoTeksto: false
     eligoTeksto1: false
     textComponent: false
@@ -43,6 +50,10 @@
     - textComponent: !<reference.Text> 00000000-0000-0000-0000-000000000000
       eligoTeksto: !<reference.Text> 00000000-0000-0000-0000-000000000000
       eligoTeksto1: !<reference.Text> 00000000-0000-0000-0000-000000000000
+<<<<<<< HEAD
+=======
+      cloudStorageModule: !<reference.CloudStorageModule> 00000000-0000-0000-0000-000000000000
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
   ScriptTypes:
     -
       {}

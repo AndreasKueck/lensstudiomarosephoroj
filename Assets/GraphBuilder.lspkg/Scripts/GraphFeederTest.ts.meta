@@ -22,8 +22,11 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
+<<<<<<< HEAD
   VersionPrerelease: ""
   UpdateOrder: 0
+=======
+>>>>>>> ce0d5834a487c09ed032cc1983a5835d654443a2
   ComponentUid: 410ad11a-d27d-410f-88f7-fc42816478a5
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
