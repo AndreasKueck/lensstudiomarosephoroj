@@ -1,7 +1,6 @@
 Tio chi estas la Lens-Studio-pakajho por Snapchat-lenso "[Maro: sep horoj](https://www.snapchat.com/lens/33aa009364834fa48d113cd4aba5956c?type=SNAPCODE&metadata=01&)". Ghi prezentas akvonivelojn prognozitajn por loko, dato kaj horo specifeblaj fare de la uzanto kaj por la ses sekvaj horoj. La prezento estas fasonata, kiel x-y-grafikajho (x: tempo; y: akvonivelo). La loko estas specifebla per tio, ke la uzanto enigas ghiajn harmonajn konstituantojn. Jen [videajho](https://www.snapchat.com/@imnej7/spotlight/W7_EDlXWTBiXAEEniNoMPwAAYY3NiZ3BtcnZwAZ4HntoMAZ4HntnbAAAAAQ) kreita per la lenso.
 
 Tio, kiel la uzanto enigu, estas priskribita en ret-apo "[Prognozo de akvoniveloj per TICON-4-datumoj](https://script.google.com/a/~/macros/s/AKfycbzgeChQUzIlVM5wmtsrmwZkNNJUZgFLLPvtYkNztVaFhHHq2xp3NqImx2uolmQw_qBG4g/exec)".
-Pro uzo de nelokdependa konservado la enigo estas konservata por la sekva uzo de la lenso.
 
 Bazo:
 
