@@ -608,9 +608,173 @@ function formatDailyExtrema(extrema) {
     return lines.join("\n");
 }
 
-// ---------------- MAIN ----------------
+// ---------------- EINSCHRAENKUNGEN DER KONSTITUENTEN ----------------
+
+function erkenneOptimumigitaSpeco(parsedInput, components) {
+    /*
+     * Numerische Erkennungswerte aus datumajRimarkoj_()
+     * der Google-Apps-Script-Web-App.
+     *
+     * In der Linsen-Eingabe fehlen die geografischen Koordinaten.
+     * Deshalb werden die verbliebenen Kennwerte unter den
+     * Amplituden und Phasen der Konstituenten gesucht.
+     *
+     * Rueckgabe:
+     *   "maksimumoj" = nur Maxima ausgeben
+     *   "minimumoj" = nur Minima ausgeben
+     *   ""           = uneingeschraenkte Ausgabe
+     */
+    var rekonoj = [
+        { value: 335.479994, speco: "minimumoj" },
+        { value: 325.719869, speco: "maksimumoj" },
+
+        { value: 28.777775, speco: "minimumoj" },
+        { value: 15.299507, speco: "maksimumoj" },
+
+        { value: 281.426059, speco: "minimumoj" },
+        { value: 276.081228, speco: "maksimumoj" },
+
+        { value: 347.217832, speco: "minimumoj" },
+        { value: 347.169921, speco: "maksimumoj" },
+
+        { value: 317.995187, speco: "minimumoj" },
+        { value: 311.488437, speco: "maksimumoj" }
+    ];
+
+    // Nur Rundungsfehler der Umrechnung Grad <-> Radiant abfangen.
+    var tolerance = 0.0000001;
+
+    for (var i = 0; i < components.length; i++) {
+        var component = components[i];
+        var phaseDeg = component.u * 180 / Math.PI;
+
+        for (var j = 0; j < rekonoj.length; j++) {
+            var rekono = rekonoj[j];
+
+            if (
+                Math.abs(component.a - rekono.value) < tolerance ||
+                Math.abs(phaseDeg - rekono.value) < tolerance
+            ) {
+                return rekono.speco;
+            }
+        }
+    }
+
+    /*
+     * Explizite Kennzeichnung als Alternative, z.B.:
+     *
+     * 202708301340 Hechthausen (maksimumoj)
+     * 202708301340 Hechthausen (minimumoj)
+     *
+     * Diese Kennzeichnung funktioniert auch bei neuen oder
+     * geaenderten Konstituentensaetzen ohne bekannten Kennwert.
+     */
+    var loknomo = normalizeInputText(parsedInput.loknomo || "");
+
+    if (/\(\s*maksimumoj\s*\)/i.test(loknomo)) {
+        return "maksimumoj";
+    }
+
+    if (/\(\s*minimumoj\s*\)/i.test(loknomo)) {
+        return "minimumoj";
+    }
+
+    return "";
+}
+
+// ---------------- MAIN / AUSGABESTEUERUNG ----------------
 
 function main(parsedInput) {
+    if (!parsedInput) {
+        // Bisheriges Verhalten bei fehlender Eingabe beibehalten.
+        mainMitKurve(parsedInput);
+        return;
+    }
+
+    aktualaDatumojTeksto = parsedInput.datumojTeksto;
+
+    if (
+        !datumojCache ||
+        datumojCacheSource !== aktualaDatumojTeksto
+    ) {
+        datumojCache = parseDatumoj(aktualaDatumojTeksto);
+        datumojCacheSource = aktualaDatumojTeksto;
+    }
+
+    var optimumigitaSpeco = erkenneOptimumigitaSpeco(
+        parsedInput,
+        datumojCache
+    );
+
+    if (!optimumigitaSpeco) {
+        // Normale Konstituenten: komplette bisherige Ausgabe.
+        mainMitKurve(parsedInput);
+        return;
+    }
+
+    /*
+     * Sonderfall:
+     * Die graphische Kurve bekommt ausschliesslich Nullwerte.
+     * Gleiche Anzahl und gleiches Zahlenformat wie bisher:
+     * t0, t0+1h, ..., t0+6h.
+     *
+     * Die Nullen sind nur Darstellungswerte, keine Prognose.
+     */
+    if (script.eligoTeksto1) {
+        script.eligoTeksto1.text =
+            "0.000 0.000 0.000 0.000 0.000 0.000 0.000 ";
+    }
+
+    /*
+     * Fuer die Extremwertsuche weiterhin echte Wasserstaende
+     * berechnen. niv() darf NICHT auf Null gesetzt werden.
+     */
+    var dailyExtrema = calculateDailyExtrema(parsedInput.startDate);
+
+    if (optimumigitaSpeco === "maksimumoj") {
+        dailyExtrema.lowWater = [];
+    } else {
+        dailyExtrema.highWater = [];
+    }
+
+    var dailyExtremaText = formatDailyExtrema(dailyExtrema);
+
+    var d = parsedInput.startDate;
+
+    var dato000 =
+        "" + d.getUTCFullYear() +
+        twoDigits(d.getUTCMonth() + 1) +
+        twoDigits(d.getUTCDate());
+
+    var horo000 =
+        twoDigits(d.getUTCHours()) + ":" +
+        twoDigits(d.getUTCMinutes());
+
+    /*
+     * Keine Textkurve, keine Stundenachse und kein Wasserstand
+     * fuer t0. Stattdessen nur die zugelassenen Tagesextrema
+     * zusammen mit Orts-, Zeit- und Nutzungshinweisen.
+     *
+     * Vollstaendiges Ueberschreiben entfernt auch eine zuvor
+     * angezeigte Textkurve eines anderen Konstituentensatzes.
+     */
+    if (script.eligoTeksto) {
+        script.eligoTeksto.text =
+            "Akvoniveloj en m en " + parsedInput.loknomo + ".\n" +
+            "Neoficiala; ne por navigaciaj celoj.\n" +
+            "t0 estas " + dato000 + " " + horo000 +
+            "; horoj en UTK\n" +
+            "Konstituantoj optimumigitaj por " +
+            optimumigitaSpeco + ".\n" +
+            "La grafika kurbo estas nuligita; " +
+            "ghi ne montras prognozitajn akvonivelojn.\n" +
+            dailyExtremaText;
+    }
+}
+
+// ---------------- MAIN ----------------
+
+function mainMitKurve(parsedInput) {
     if (!parsedInput) {
         if (script.eligoTeksto) {
             script.eligoTeksto.text = "";
