@@ -1,0 +1,140 @@
+- !<AssetImportMetadata/f3f43c42-42ca-2839-5103-bc59a0fcd9b4>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 82caecb3-9692-42d0-a509-f470ed9f8827
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 82caecb3-9692-42d0-a509-f470ed9f8827
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    AssetLibraryId: 6cTAeYjvp4nSjrJuCZ1yqD
+  AssetDataMap:
+    ObjectPrefab: !<own> a57807d6-414a-4e75-ac4b-ef3b7d0489f6
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/42516d69-1cd9-4b5c-6abe-2be9aa6cf8e3>
+  PrefabRemaps:
+    []
+  Name: Fountain_Waterdrop
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> a94114aa-409b-458b-7d4b-f527f36b87b9
+- !<VFXComponent/4589945a-ba76-4536-420b-ba82f543b7b5>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 2
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 9e6dad0d-8cc5-4a3d-930c-94245908ab7b
+  SystemRenderLayerInfoMap:
+    0: !<VFXSystemRenderLayerInfo>
+      RenderLayerInfoMap:
+        render_0_0: !<VFXRenderLayerInfo>
+          Enabled: false
+          RenderLayers: 1
+- !<VFXComponent/871d94c2-a3c2-468a-7ffc-ba9c8231ea35>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> da2f01ba-e9f9-4f72-9007-7b4bb19343a7
+  SystemRenderLayerInfoMap:
+    0: !<VFXSystemRenderLayerInfo>
+      RenderLayerInfoMap:
+        render_0_0: !<VFXRenderLayerInfo>
+          Enabled: false
+          RenderLayers: 1
+- !<ObjectPrefabAssetData/a57807d6-414a-4e75-ac4b-ef3b7d0489f6>
+  Prototype: !<ObjectOwner/216314b6-797b-4c60-95ed-34492c254d2c>
+    PackagePath: ""
+    objects:
+      - !<own> d836456c-e96a-447f-44d0-40d66bcfb1d6
+- !<VFXComponent/a94114aa-409b-458b-7d4b-f527f36b87b9>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 33f37c4e-83b2-4474-9e08-49d900a98560
+  SystemRenderLayerInfoMap:
+    0: !<VFXSystemRenderLayerInfo>
+      RenderLayerInfoMap:
+        render_0_0: !<VFXRenderLayerInfo>
+          Enabled: false
+          RenderLayers: 1
+- !<SceneObject/c3ebade0-354b-4163-6340-6767fb258866>
+  PrefabRemaps:
+    []
+  Name: Fountain_Splash
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4589945a-ba76-4536-420b-ba82f543b7b5
+- !<SceneObject/d836456c-e96a-447f-44d0-40d66bcfb1d6>
+  PrefabRemaps:
+    []
+  Name: FountainVFX__PLACE_IN_SCENE
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: -35.057194}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> fa069524-7037-4c54-6409-b0ba9a788ff1
+    - !<own> 42516d69-1cd9-4b5c-6abe-2be9aa6cf8e3
+    - !<own> c3ebade0-354b-4163-6340-6767fb258866
+  Components:
+    []
+- !<SceneObject/fa069524-7037-4c54-6409-b0ba9a788ff1>
+  PrefabRemaps:
+    []
+  Name: Fountain_Distortion
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 871d94c2-a3c2-468a-7ffc-ba9c8231ea35

@@ -1,0 +1,455 @@
+- !<AssetImportMetadata/74f5ca81-72ac-2d81-fd21-cc733d86e559>
+  ImportedAssetIds:
+    ObjectPrefab: !<reference> 8f0b0834-9a1b-4b4b-9175-6471b4649725
+  ImporterName: ObjectPrefabImporter
+  PrimaryAsset: !<reference> 8f0b0834-9a1b-4b4b-9175-6471b4649725
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    ObjectPrefab: !<own> 01a9ba08-20db-4beb-9bfd-c041d7947205
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ObjectPrefabAssetData/01a9ba08-20db-4beb-9bfd-c041d7947205>
+  Prototype: !<ObjectOwner/2add6430-e6a2-457b-a6a6-ca9cf7547236>
+    PackagePath: ""
+    objects:
+      - !<own> 389ef6c5-800a-420a-7dea-a582a9630c64
+- !<ScriptComponent/0f8b0eb9-8860-4ecf-6e1c-e03c90423e8b>
+  PrefabRemaps:
+    []
+  Name: GraphBuilder
+  Enabled: true
+  ScriptAsset: !<reference> 224a9dcc-96d8-41a8-9817-e3f49e4019ab
+  ScriptInputsDefault:
+    refreshMethod: true
+    lowerBound: true
+    graphMode: true
+    clampCurveInsideGraph: true
+    smoothingEnabled: true
+    smoothingSharpness: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      curveMeshVisual: !<reference.RenderMeshVisual> 3a6359af-9dec-443e-437f-62b434bcc9b2
+      sampling: 100
+      refreshMethod: 0
+      refreshTime: 0.500000
+      upperBound: !<float> 60.000000
+      lowerBound: !<float> 0.000000
+      colors: !<Vec3[]>
+        - {x: 0.146700, y: 0.975128, z: 0.000000}
+        - {x: 0.956863, y: 0.286275, z: 0.278431}
+      graphMode: 0
+      curveWidth: 0.040000
+      clampCurveInsideGraph: true
+      smoothingEnabled: false
+      smoothingSharpness: 0.500000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/1363f085-f177-446e-7151-cf947e348833>
+  PrefabRemaps:
+    []
+  Name: Background
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> be307dc2-731e-4a9e-55f2-079f66714216
+- !<Image/16ea119f-c98a-4367-5d23-48a0fb342861>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ac8f4794-fffe-4f0e-abae-d576b1b5951b
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/23b12dc7-9a2e-46f1-4fc5-e08859ded110>
+  PrefabRemaps:
+    []
+  Name: Curve
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.500000, y: -0.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 84183d3d-4efc-4808-7323-9efb37dcb704
+- !<Image/32e34658-8b6d-4fef-77b7-30889ce8d10d>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ac8f4794-fffe-4f0e-abae-d576b1b5951b
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/389ef6c5-800a-420a-7dea-a582a9630c64>
+  PrefabRemaps:
+    []
+  Name: GraphExamples
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 5319bb03-5b4d-4de9-425b-2c65fe421285
+    - !<own> 3d8bd4b5-11db-4026-708b-831b59461a37
+    - !<own> c477c7bd-effc-47db-5937-ae4ebad97e9e
+  Components:
+    []
+- !<RenderMeshVisual/3a6359af-9dec-443e-437f-62b434bcc9b2>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 05266268-9b2b-4d55-9f3b-e06225177012
+  Mesh: !<reference> 00000000-0000-0000-0000-000000000000
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<SceneObject/3d8bd4b5-11db-4026-708b-831b59461a37>
+  PrefabRemaps:
+    []
+  Name: RegularRandomValues
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 10.000000, y: 10.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 1363f085-f177-446e-7151-cf947e348833
+    - !<own> 23b12dc7-9a2e-46f1-4fc5-e08859ded110
+  Components:
+    - !<own> 8d6e09fc-baf7-4dae-468c-a876726f3ae4
+    - !<own> 9cae5188-9fd1-4912-47fa-e62fac285e53
+- !<SceneObject/5319bb03-5b4d-4de9-425b-2c65fe421285>
+  PrefabRemaps:
+    []
+  Name: FramerateGraph
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -15.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 40.000000, z: 0.000000}
+    Scale: {x: 15.000000, y: 7.500000, z: 0.375000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> d9e98cd0-17df-432b-4d76-8e372842b35e
+    - !<own> 736832f6-352f-4039-472c-877a0de1fbfb
+  Components:
+    - !<own> 0f8b0eb9-8860-4ecf-6e1c-e03c90423e8b
+    - !<own> e2b7a89c-db30-469b-4371-8828f8bfbb57
+- !<ScriptComponent/724857e3-8d65-4a41-6ee6-9ae59d2e3800>
+  PrefabRemaps:
+    []
+  Name: GraphFeederTest
+  Enabled: true
+  ScriptAsset: !<reference> 90b76501-fb70-46bf-8797-22d63e642329
+  ScriptInputsDefault:
+    eligoTeksto: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      graphBuilder: !<MappingBased.AssignableType_1> 9537d49e-9907-4283-7ac7-d48e81a5da96
+      mode: !<float> 2.000000
+      eligoTeksto: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/736832f6-352f-4039-472c-877a0de1fbfb>
+  PrefabRemaps:
+    []
+  Name: Curve
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.500000, y: -0.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 3a6359af-9dec-443e-437f-62b434bcc9b2
+- !<RenderMeshVisual/7b9215c6-836c-4ba4-6b76-3df3d2b738f2>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 05266268-9b2b-4d55-9f3b-e06225177012
+  Mesh: !<reference> 00000000-0000-0000-0000-000000000000
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<RenderMeshVisual/84183d3d-4efc-4808-7323-9efb37dcb704>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 05266268-9b2b-4d55-9f3b-e06225177012
+  Mesh: !<reference> 00000000-0000-0000-0000-000000000000
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
+- !<ScriptComponent/8d6e09fc-baf7-4dae-468c-a876726f3ae4>
+  PrefabRemaps:
+    []
+  Name: GraphBuilder
+  Enabled: true
+  ScriptAsset: !<reference> 224a9dcc-96d8-41a8-9817-e3f49e4019ab
+  ScriptInputsDefault:
+    lowerBound: true
+    graphMode: true
+    clampCurveInsideGraph: true
+    smoothingEnabled: true
+    smoothingSharpness: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      curveMeshVisual: !<reference.RenderMeshVisual> 84183d3d-4efc-4808-7323-9efb37dcb704
+      sampling: 20
+      refreshMethod: 2
+      refreshTime: 0.500000
+      upperBound: !<float> 1000.000000
+      lowerBound: !<float> 0.000000
+      colors: !<Vec3[]>
+        - {x: 0.048798, y: 0.904830, z: 0.000000}
+        - {x: 0.975128, y: 0.872236, z: 0.067384}
+        - {x: 0.981781, y: 0.295354, z: 0.209201}
+        - {x: 0.194064, y: 0.152682, z: 0.981781}
+      graphMode: 0
+      curveWidth: 0.040000
+      clampCurveInsideGraph: true
+      smoothingEnabled: false
+      smoothingSharpness: 0.500000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/9537d49e-9907-4283-7ac7-d48e81a5da96>
+  PrefabRemaps:
+    []
+  Name: GraphBuilder
+  Enabled: true
+  ScriptAsset: !<reference> 224a9dcc-96d8-41a8-9817-e3f49e4019ab
+  ScriptInputsDefault:
+    refreshMethod: true
+    upperBound: true
+    graphMode: true
+    clampCurveInsideGraph: true
+    smoothingEnabled: true
+    smoothingSharpness: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      curveMeshVisual: !<reference.RenderMeshVisual> 7b9215c6-836c-4ba4-6b76-3df3d2b738f2
+      sampling: 100
+      refreshMethod: 0
+      refreshTime: 0.500000
+      upperBound: !<float> 1.000000
+      lowerBound: !<float> -1.000000
+      colors: !<Vec3[]>
+        - {x: 0.000000, y: 0.094224, z: 0.975128}
+        - {x: 0.333577, y: 0.495567, z: 0.981628}
+        - {x: 0.646204, y: 0.751842, z: 0.981628}
+      graphMode: 0
+      curveWidth: 0.040000
+      clampCurveInsideGraph: true
+      smoothingEnabled: false
+      smoothingSharpness: 0.500000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/9b887cfc-b451-4973-6768-0fd940994b85>
+  PrefabRemaps:
+    []
+  Name: Curve
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: -0.500000, y: -0.500000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 7b9215c6-836c-4ba4-6b76-3df3d2b738f2
+- !<ScriptComponent/9cae5188-9fd1-4912-47fa-e62fac285e53>
+  PrefabRemaps:
+    []
+  Name: GraphFeederTest
+  Enabled: true
+  ScriptAsset: !<reference> 90b76501-fb70-46bf-8797-22d63e642329
+  ScriptInputsDefault:
+    eligoTeksto: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      graphBuilder: !<MappingBased.AssignableType_1> 8d6e09fc-baf7-4dae-468c-a876726f3ae4
+      mode: !<float> 1.000000
+      eligoTeksto: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/ade3f849-d73a-4aab-6550-bdd8b8c238d8>
+  PrefabRemaps:
+    []
+  Name: Background
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 16ea119f-c98a-4367-5d23-48a0fb342861
+- !<Image/be307dc2-731e-4a9e-55f2-079f66714216>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ac8f4794-fffe-4f0e-abae-d576b1b5951b
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/c477c7bd-effc-47db-5937-ae4ebad97e9e>
+  PrefabRemaps:
+    []
+  Name: Cosinus
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 15.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: -40.000000, z: 0.000000}
+    Scale: {x: 15.000000, y: 7.500000, z: 0.375000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> ade3f849-d73a-4aab-6550-bdd8b8c238d8
+    - !<own> 9b887cfc-b451-4973-6768-0fd940994b85
+  Components:
+    - !<own> 9537d49e-9907-4283-7ac7-d48e81a5da96
+    - !<own> 724857e3-8d65-4a41-6ee6-9ae59d2e3800
+- !<SceneObject/d9e98cd0-17df-432b-4d76-8e372842b35e>
+  PrefabRemaps:
+    []
+  Name: Background
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 32e34658-8b6d-4fef-77b7-30889ce8d10d
+- !<ScriptComponent/e2b7a89c-db30-469b-4371-8828f8bfbb57>
+  PrefabRemaps:
+    []
+  Name: GraphFeederTest
+  Enabled: true
+  ScriptAsset: !<reference> 90b76501-fb70-46bf-8797-22d63e642329
+  ScriptInputsDefault:
+    mode: true
+    eligoTeksto: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      graphBuilder: !<MappingBased.AssignableType_1> 0f8b0eb9-8860-4ecf-6e1c-e03c90423e8b
+      mode: !<float> 0.000000
+      eligoTeksto: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}

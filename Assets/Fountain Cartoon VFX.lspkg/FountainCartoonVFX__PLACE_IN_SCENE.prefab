@@ -1,0 +1,42 @@
+- !<ObjectPrefab/2d8269c3-ff41-40ff-9df7-56b509173d16>
+  PackagePath: ""
+  objects:
+    - !<own> b711117e-1f56-461a-9cbd-8f227770e815
+  LazyLoading: false
+  RetainAssets: true
+  PreviewEnvironment: !<reference> 00000000-0000-0000-0000-000000000000
+- !<VFXComponent/8c0373bf-8be7-4a2f-9eee-5077e742e221>
+  PrefabRemaps:
+    []
+  Name: VFX Component
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  VFXAsset: !<reference> 3c619184-a1cb-4478-8214-d7adddad80a5
+  SystemRenderLayerInfoMap:
+    0: !<VFXSystemRenderLayerInfo>
+      RenderLayerInfoMap:
+        render_0_0: !<VFXRenderLayerInfo>
+          Enabled: false
+          RenderLayers: 1
+- !<SceneObject/b711117e-1f56-461a-9cbd-8f227770e815>
+  PrefabRemaps:
+    - 8c0373bf-8be7-4a2f-9eee-5077e742e221: 8c0373bf-8be7-4a2f-6111-af8818bd1dde
+    - b711117e-1f56-461a-9cbd-8f227770e815: b711117e-1f56-461a-6342-70dd888f17ea
+  Name: FountainCartoonVFX__PLACE_IN_SCENE
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8c0373bf-8be7-4a2f-9eee-5077e742e221

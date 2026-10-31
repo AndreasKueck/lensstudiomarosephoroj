@@ -1,0 +1,40 @@
+- !<NativePackageDescriptor/ffb13799-f199-4084-9a95-e92b0e6309b7>
+  PackagePath: ""
+  StudioVersion:
+    major: 5
+    minor: 24
+    patch: 1
+    build: 26100516
+    type: Unset
+    buildFlavor: ""
+    timestamp: 0
+    commit: ""
+  Description: Fountain VFX This package contains the high quality Fountain VFX asset. You can customize this particle system using VFX Editor. Click here to learn more about VFX Editor
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  VersionMajor: 1
+  VersionMinor: 0
+  VersionPatch: 0
+  UpdateCheckpoint: 107
+  ExportUid: aeefc355-f7cc-4b55-b200-b9173d938fdf
+  ComponentUid: 03efad9e-f197-42f8-a1c0-51977152c5bc
+  PackagePolicy: CanBeUnpackedTransparent
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  VersionPrerelease: ""
+  Instantiable: !<reference> 00000000-0000-0000-0000-000000000000
+  AssetLibraryDependencyStructure: !<AssetLibraryDependencyStructure>
+    Name: ""
+    AssetId: ""
+    Hash: ""
+    Version:
+      major: 0
+      minor: 0
+      patch: 0
+      build: 0
+  coreVersion: 377
+  clientVersion: 14.21
